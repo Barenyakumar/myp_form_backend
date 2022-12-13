@@ -6,6 +6,10 @@ const ResponseSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    createdBy: {
+      type: String,
+      require: true,
+    },
     formId: {
       type: String,
       required: true,
@@ -17,7 +21,7 @@ const ResponseSchema = new mongoose.Schema(
           type: String,
           required: true,
         },
-        questionText: { type: String, required:true },
+        questionText: { type: String, required: true },
         questionImage: { type: String, default: "" },
         response: { type: Array, default: [] },
         answer: { type: Array, default: [] },

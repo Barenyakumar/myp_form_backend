@@ -1,6 +1,8 @@
 const router = require("express").Router()
 const Form = require("../models/forms")
 
+//create new form
+
 router.post("/create", async (req, res) => {
   try {
     const newForm = new Form(req.body)
@@ -11,6 +13,9 @@ router.post("/create", async (req, res) => {
     res.status(500).json({ err: err })
   }
 })
+
+
+//
 
 router.get("/all-forms", async (req, res) => {
   try {
