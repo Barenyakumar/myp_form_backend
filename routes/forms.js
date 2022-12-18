@@ -25,25 +25,18 @@ router.get("/all-forms", async (req, res) => {
     res.send(e)
   }
 })
-
-router.get("/:form", async (req, res) => {
+router.get("/:email", async (req, res) => {
   try {
-    const formId = req.params.form
-    const form = await Form.findById(formId)
-    res.status(200).json(form)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
-
-router.get("/form/:user", async (req, res) => {
-  try {
-    const user = req.params.user
+    const user = req.params.email
     const form = await Form.find({ createdBy: user })
     res.status(200).json(form)
   } catch (err) {
     res.status(500).json(err)
   }
 })
+
+
+
+
 
 module.exports = router
